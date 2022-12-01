@@ -1,4 +1,14 @@
-// TODO: Add your header
+// Brian Milian
+// CPSC 120-12
+// 2022-12-01
+// brianmilian@csu.fullerton.edu
+// @brian-250
+//
+// Lab 12-01
+// Partners: @engenies
+//
+// Promise of animated_gradient_function.cc creation
+//
 
 /* Do not edit below this line. */
 /* Do not edit below this line. */
