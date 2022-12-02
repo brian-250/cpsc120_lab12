@@ -7,7 +7,7 @@
 // Lab 12-02
 // Partners: @engenies
 //
-// Has two functions to check file extension and to build sine lookup table
+// Creates a GIF image with different colors at each pixel of the image. The user can also interact with the program and add any phrase of text desired on the image. The text will be of color yellow.
 //
 
 #include <Magick++.h>
@@ -62,11 +62,21 @@ int main(int argc, char const* argv[]) {
   // Remember to round the number to the closest integer.
   const int image_height = int(lround(image_width / aspect_ratio));
   Magick::ColorRGB yellow(1, 1, 0);
-  Magick::Image image(Magick::Geometry(image_width, image_height), yellow);
+
+  // M
+  // Magick::Image image(Magick::Geometry(image_width, image_height), yellow);
+
   // Print out some information about the image to help us debug what's
   // going on.
-  std::cout << "Your image has " << image.columns()
-            << " columns (x direction) and " << image.rows()
+
+  // WRONG to use image.columns(). You have to use image_width
+  // WRONG to use image.rows(). You have to use image_height
+  // std::cout << "Your image has " << image.columns()
+  //           << " columns (x direction) and " << image.rows()
+  //           << " rows (y direction).\n";
+
+  std::cout << "Your image has " << image_width
+            << " columns (x direction) and " << image_height
             << " rows (y direction).\n";
 
   const int number_of_images = 5;
@@ -75,6 +85,7 @@ int main(int argc, char const* argv[]) {
 
   for (int image_count = 0; image_count < number_of_images; image_count++) {
     std::cerr << "Image " << image_count + 1 << "...";
+    Magick::Image image(Magick::Geometry(image_width, image_height), yellow);
 
     // TODO: Create an inner and outer loop to visit each pixel.
     // For example:
@@ -109,8 +120,9 @@ int main(int argc, char const* argv[]) {
     Magick::ColorRGB color(red, green, blue);
     // TODO: Set the current pixel color in the image to the new color.
     // For example:
-    // image.pixelColor(row, column, color);
-    image.pixelColor(row, column, color);
+    // image.pixelColor(row, column, color); INCORRECT WAY
+    // image.pixelColor(column, row, color); CORRECT WAY
+    image.pixelColor(column, row, color);
     // TODO: Declare a Magick::ColorRGB variable named color and initialize
     // it with the values from the red, green, blue variables.
     // TODO: Set the current pixel color in the image to the new color.
@@ -133,6 +145,7 @@ int main(int argc, char const* argv[]) {
     image.annotate(message, Magick::CenterGravity);
 
     // TODO: Use push_back to add the current image to the vector images.
+    images.push_back(image);
     std::cerr << "completed.\n";
   }
 

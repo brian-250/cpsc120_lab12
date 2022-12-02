@@ -7,7 +7,7 @@
 // Lab 12-02
 // Partners: @engenies
 //
-// Has two functions to check file extension and to build sine lookup table
+// There are four functions for 'make_message.cc'. 'HasMatchingFileExtension()' is to check if the file created in the running of the program has the required file extension to run the program. 'RandomDouble01()', 'RandomDouble11()', and 'CoinFlip()' generate random numbers.
 //
 
 #include "make_message_functions.h"

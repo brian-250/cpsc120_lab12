@@ -1,4 +1,14 @@
-// TODO: Add your header
+// Brian Milian
+// CPSC 120-12
+// 2022-12-01
+// brianmilian@csu.fullerton.edu
+// @brian-250
+//
+// Lab 12-02
+// Partners: @engenies
+//
+// This file is a promise to the 'make-message.cc' file that the 'make_message_functions.cc' file will exist
+//
 
 /* Do not edit below this line. */
 /* Do not edit below this line. */
