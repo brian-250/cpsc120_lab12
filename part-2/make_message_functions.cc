@@ -1,4 +1,14 @@
-// TODO: Add your header
+// Brian Milian
+// CPSC 120-12
+// 2022-12-01
+// brianmilian@csu.fullerton.edu
+// @brian-250
+//
+// Lab 12-02
+// Partners: @engenies
+//
+// Has two functions to check file extension and to build sine lookup table
+//
 
 #include "make_message_functions.h"
 
@@ -31,8 +41,8 @@ double RandomDouble01() {
   // RandomNumberGenerator rng = RandomNumberGenerator(1.0, 10.0);
   //int random_number = int(rng.next());
   // TODO: Using rng_01, call next() and return the next random number.
-  double random_number1 = rng_01.next();
-  return random_number1;
+  double random_number01 = rng_01.next();
+  return random_number01;
 }
 
 // Returns a random double between -1 and 1
@@ -48,8 +58,5 @@ bool CoinFlip() {
   // TODO: Using rng_coin_flip, call next() and return true if the randome
   // number is greater than 0.0 and false otherwise.
   double rng_coin = rng_coin_flip.next();
-  if (rng_coin < 0.0){
-  return true;
-}
-  return false;
+  return (rng_coin > 0.0);
 }

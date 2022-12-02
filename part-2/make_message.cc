@@ -1,4 +1,14 @@
-// TODO: Add your header
+// Brian Milian
+// CPSC 120-12
+// 2022-12-01
+// brianmilian@csu.fullerton.edu
+// @brian-250
+//
+// Lab 12-02
+// Partners: @engenies
+//
+// Has two functions to check file extension and to build sine lookup table
+//
 
 #include <Magick++.h>
 
@@ -19,19 +29,31 @@ int main(int argc, char const* argv[]) {
   Magick::InitializeMagick(*argv);
   // TODO: convert the command line arguments to a
   // std::vector of std::strings.
+  std::vector<std::string> args = std::vector<std::string>{argv, argv + argc};
   // TODO: Check to make sure you have enough arguments. If you have
   // too few, print an error message and exit.
+  if (args.size() < 3) {
+    std::cout << "Please provide a path to a file and a brief message.\n";
+    return 1;
+  }
   // TODO: Declare a std::string variable named output_file_name.
+  std::string output_file_name;
   // TODO: Assign the first argument to output_file_name
-
+  output_file_name = args.at(1);
   // TODO: Declare a std::string variable named image_format and
   // initialize it to ".gif"
+  std::string image_format{".gif"};
   // TODO: Using HasMatchingFileExtension(), check to see if
   // output_file_name has the extension defined as image_format. If
   // output_file_name does not, then print an error message and return 1.
+  if (!HasMatchingFileExtension(output_file_name, image_format)) {
+    std::cout << output_file_name << " is missing the required file extension .gif.\n";
+    return 1;
+  }
 
   // TODO: Declare a std::string variable nmaed message and initialize it to
   // the args.at(2)
+  std::string message{args.at(2)};
 
   const double aspect_ratio = 16.0 / 9.0;
   // Set the image width to 1024 pixels
@@ -49,6 +71,7 @@ int main(int argc, char const* argv[]) {
 
   const int number_of_images = 5;
   // TODO: Declare a std::vector of Magick::Image, name the variable images.
+  std::vector<Magick::Image> images;
 
   for (int image_count = 0; image_count < number_of_images; image_count++) {
     std::cerr << "Image " << image_count + 1 << "...";
@@ -57,19 +80,37 @@ int main(int argc, char const* argv[]) {
     // For example:
     // for (int row = 0; row < image.rows(); row++) {
     //   for (int column = 0; column < image.columns(); column++) {
+      for (int row = 0; row < image.rows(); row++) {
+        for (int column = 0; column < image.columns(); column++){
+
     // TODO: Declare a double variable named random_color_intensity and assign
     // it RandomDouble01()
+    double random_color_intensity = RandomDouble01();
     // TODO: Declare a double variable named red and assign it 0.0;
+    double red = 0.0;
     // TODO: Declare a double variable named green and assign it 0.0;
+    double green = 0.0;
     // TODO: Declare a double variable named blue and assign it 0.0;
+    double blue = 0.0;
     // TODO: If CoinFlip() is true, then assign random_color_intensity to red
     // TODO: If CoinFlip() is true, then assign random_color_intensity to green
     // TODO: If CoinFlip() is true, then assign random_color_intensity to blue
+    if (CoinFlip() == true) {
+      red = random_color_intensity;
+    }
+    if (CoinFlip() == true) {
+      blue = random_color_intensity;
+    }
+    if (CoinFlip() == true) {
+      green = random_color_intensity;
+    }
     // TODO: Declare a Magick::ColorRGB variable named color and initialize
     // it with the values from the red, green, blue variables.
+    Magick::ColorRGB color(red, green, blue);
     // TODO: Set the current pixel color in the image to the new color.
     // For example:
     // image.pixelColor(row, column, color);
+    image.pixelColor(row, column, color);
     // TODO: Declare a Magick::ColorRGB variable named color and initialize
     // it with the values from the red, green, blue variables.
     // TODO: Set the current pixel color in the image to the new color.
@@ -77,6 +118,8 @@ int main(int argc, char const* argv[]) {
     // image.pixelColor(column, row, color);
     //   }
     // }
+         }
+       }
     // TODO: Once you are generating a noisy image with random colors,
     // uncomment the lines below to add your message to the center of the
     // image.
@@ -84,6 +127,10 @@ int main(int argc, char const* argv[]) {
     // image.fontPointsize(image.rows() / 3.0);
     // image.fillColor(Magick::Color("yellow"));
     // image.annotate(message, Magick::CenterGravity);
+    image.font("Helvetica");
+    image.fontPointsize(image.rows() / 3.0);
+    image.fillColor(Magick::Color("yellow"));
+    image.annotate(message, Magick::CenterGravity);
 
     // TODO: Use push_back to add the current image to the vector images.
     std::cerr << "completed.\n";
@@ -92,6 +139,6 @@ int main(int argc, char const* argv[]) {
   // TODO: Write the images to an output file using Magick::writeImages()
   // For example:
   // Magick::writeImages(images.begin(), images.end(), output_file_name);
-
+  Magick::writeImages(images.begin(), images.end(), output_file_name);
   return 0;
 }

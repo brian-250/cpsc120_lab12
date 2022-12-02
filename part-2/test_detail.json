@@ -1,10 +1,10 @@
 {
   "tests": 5,
-  "failures": 1,
+  "failures": 0,
   "disabled": 0,
   "errors": 0,
-  "timestamp": "2022-12-01T15:48:53Z",
-  "time": "0.001s",
+  "timestamp": "2022-12-02T09:52:26Z",
+  "time": "0.003s",
   "name": "AllTests",
   "testsuites": [
     {
@@ -13,23 +13,23 @@
       "failures": 0,
       "disabled": 0,
       "errors": 0,
-      "timestamp": "2022-12-01T15:48:53Z",
-      "time": "0.001s",
+      "timestamp": "2022-12-02T09:52:26Z",
+      "time": "0.003s",
       "testsuite": [
         {
           "name": "Exists",
           "status": "RUN",
           "result": "COMPLETED",
-          "timestamp": "2022-12-01T15:48:53Z",
-          "time": "0.001s",
+          "timestamp": "2022-12-02T09:52:26Z",
+          "time": "0.002s",
           "classname": "HasMatchingFileExtension"
         },
         {
           "name": "NotExist",
           "status": "RUN",
           "result": "COMPLETED",
-          "timestamp": "2022-12-01T15:48:53Z",
-          "time": "0s",
+          "timestamp": "2022-12-02T09:52:26Z",
+          "time": "0.001s",
           "classname": "HasMatchingFileExtension"
         }
       ]
@@ -40,14 +40,14 @@
       "failures": 0,
       "disabled": 0,
       "errors": 0,
-      "timestamp": "2022-12-01T15:48:53Z",
+      "timestamp": "2022-12-02T09:52:26Z",
       "time": "0s",
       "testsuite": [
         {
           "name": "PredictableSeries",
           "status": "RUN",
           "result": "COMPLETED",
-          "timestamp": "2022-12-01T15:48:53Z",
+          "timestamp": "2022-12-02T09:52:26Z",
           "time": "0s",
           "classname": "RandomDouble_01"
         }
@@ -59,14 +59,14 @@
       "failures": 0,
       "disabled": 0,
       "errors": 0,
-      "timestamp": "2022-12-01T15:48:53Z",
+      "timestamp": "2022-12-02T09:52:26Z",
       "time": "0s",
       "testsuite": [
         {
           "name": "PredictableSeries",
           "status": "RUN",
           "result": "COMPLETED",
-          "timestamp": "2022-12-01T15:48:53Z",
+          "timestamp": "2022-12-02T09:52:26Z",
           "time": "0s",
           "classname": "RandomDouble_11"
         }
@@ -75,101 +75,19 @@
     {
       "name": "CoinFlip",
       "tests": 1,
-      "failures": 1,
+      "failures": 0,
       "disabled": 0,
       "errors": 0,
-      "timestamp": "2022-12-01T15:48:53Z",
+      "timestamp": "2022-12-02T09:52:26Z",
       "time": "0s",
       "testsuite": [
         {
           "name": "PredictableSeries",
           "status": "RUN",
           "result": "COMPLETED",
-          "timestamp": "2022-12-01T15:48:53Z",
+          "timestamp": "2022-12-02T09:52:26Z",
           "time": "0s",
-          "classname": "CoinFlip",
-          "failures": [
-            {
-              "failure": "make_message_unittest.cc:117\nExpected equality of these values:\n  CoinFlip()\n    Which is: false\n  coin_flip_data.at(i)\n    Which is: 1",
-              "type": ""
-            },
-            {
-              "failure": "make_message_unittest.cc:117\nExpected equality of these values:\n  CoinFlip()\n    Which is: true\n  coin_flip_data.at(i)\n    Which is: 0",
-              "type": ""
-            },
-            {
-              "failure": "make_message_unittest.cc:117\nExpected equality of these values:\n  CoinFlip()\n    Which is: false\n  coin_flip_data.at(i)\n    Which is: 1",
-              "type": ""
-            },
-            {
-              "failure": "make_message_unittest.cc:117\nExpected equality of these values:\n  CoinFlip()\n    Which is: true\n  coin_flip_data.at(i)\n    Which is: 0",
-              "type": ""
-            },
-            {
-              "failure": "make_message_unittest.cc:117\nExpected equality of these values:\n  CoinFlip()\n    Which is: false\n  coin_flip_data.at(i)\n    Which is: 1",
-              "type": ""
-            },
-            {
-              "failure": "make_message_unittest.cc:117\nExpected equality of these values:\n  CoinFlip()\n    Which is: false\n  coin_flip_data.at(i)\n    Which is: 1",
-              "type": ""
-            },
-            {
-              "failure": "make_message_unittest.cc:117\nExpected equality of these values:\n  CoinFlip()\n    Which is: false\n  coin_flip_data.at(i)\n    Which is: 1",
-              "type": ""
-            },
-            {
-              "failure": "make_message_unittest.cc:117\nExpected equality of these values:\n  CoinFlip()\n    Which is: true\n  coin_flip_data.at(i)\n    Which is: 0",
-              "type": ""
-            },
-            {
-              "failure": "make_message_unittest.cc:117\nExpected equality of these values:\n  CoinFlip()\n    Which is: true\n  coin_flip_data.at(i)\n    Which is: 0",
-              "type": ""
-            },
-            {
-              "failure": "make_message_unittest.cc:117\nExpected equality of these values:\n  CoinFlip()\n    Which is: false\n  coin_flip_data.at(i)\n    Which is: 1",
-              "type": ""
-            },
-            {
-              "failure": "make_message_unittest.cc:117\nExpected equality of these values:\n  CoinFlip()\n    Which is: false\n  coin_flip_data.at(i)\n    Which is: 1",
-              "type": ""
-            },
-            {
-              "failure": "make_message_unittest.cc:117\nExpected equality of these values:\n  CoinFlip()\n    Which is: false\n  coin_flip_data.at(i)\n    Which is: 1",
-              "type": ""
-            },
-            {
-              "failure": "make_message_unittest.cc:117\nExpected equality of these values:\n  CoinFlip()\n    Which is: true\n  coin_flip_data.at(i)\n    Which is: 0",
-              "type": ""
-            },
-            {
-              "failure": "make_message_unittest.cc:117\nExpected equality of these values:\n  CoinFlip()\n    Which is: true\n  coin_flip_data.at(i)\n    Which is: 0",
-              "type": ""
-            },
-            {
-              "failure": "make_message_unittest.cc:117\nExpected equality of these values:\n  CoinFlip()\n    Which is: true\n  coin_flip_data.at(i)\n    Which is: 0",
-              "type": ""
-            },
-            {
-              "failure": "make_message_unittest.cc:117\nExpected equality of these values:\n  CoinFlip()\n    Which is: true\n  coin_flip_data.at(i)\n    Which is: 0",
-              "type": ""
-            },
-            {
-              "failure": "make_message_unittest.cc:117\nExpected equality of these values:\n  CoinFlip()\n    Which is: true\n  coin_flip_data.at(i)\n    Which is: 0",
-              "type": ""
-            },
-            {
-              "failure": "make_message_unittest.cc:117\nExpected equality of these values:\n  CoinFlip()\n    Which is: false\n  coin_flip_data.at(i)\n    Which is: 1",
-              "type": ""
-            },
-            {
-              "failure": "make_message_unittest.cc:117\nExpected equality of these values:\n  CoinFlip()\n    Which is: false\n  coin_flip_data.at(i)\n    Which is: 1",
-              "type": ""
-            },
-            {
-              "failure": "make_message_unittest.cc:117\nExpected equality of these values:\n  CoinFlip()\n    Which is: true\n  coin_flip_data.at(i)\n    Which is: 0",
-              "type": ""
-            }
-          ]
+          "classname": "CoinFlip"
         }
       ]
     }
