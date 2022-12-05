@@ -7,7 +7,10 @@
 // Lab 12-02
 // Partners: @engenies
 //
-// There are four functions for 'make_message.cc'. 'HasMatchingFileExtension()' is to check if the file created in the running of the program has the required file extension to run the program. 'RandomDouble01()', 'RandomDouble11()', and 'CoinFlip()' generate random numbers.
+// There are four functions for 'make_message.cc'. 'HasMatchingFileExtension()'
+// is to check if the file created in the running of the program has the
+// required file extension to run the program. 'RandomDouble01()',
+// 'RandomDouble11()', and 'CoinFlip()' generate random numbers.
 //
 
 #include "make_message_functions.h"
@@ -38,7 +41,7 @@ RandomNumberGenerator rng_coin_flip{-1, 1, rng_seed};
 // Returns a random double between o and 1
 double RandomDouble01() {
   // RandomNumberGenerator rng = RandomNumberGenerator(1.0, 10.0);
-  //int random_number = int(rng.next());
+  // int random_number = int(rng.next());
   double random_number01 = rng_01.next();
   return random_number01;
 }

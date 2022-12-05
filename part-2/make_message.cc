@@ -7,7 +7,9 @@
 // Lab 12-02
 // Partners: @engenies
 //
-// Creates a GIF image with different colors at each pixel of the image. The user can also interact with the program and add any phrase of text desired on the image. The text will be of color yellow.
+// Creates a GIF image with different colors at each pixel of the image. The
+// user can also interact with the program and add any phrase of text desired on
+// the image. The text will be of color yellow.
 //
 
 #include <Magick++.h>
@@ -41,7 +43,8 @@ int main(int argc, char const* argv[]) {
   // output_file_name has the extension defined as image_format. If
   // output_file_name does not, then print an error message and return 1.
   if (!HasMatchingFileExtension(output_file_name, image_format)) {
-    std::cout << output_file_name << " is missing the required file extension .gif.\n";
+    std::cout << output_file_name
+              << " is missing the required file extension .gif.\n";
     return 1;
   }
 
@@ -56,7 +59,8 @@ int main(int argc, char const* argv[]) {
   const int image_height = int(lround(image_width / aspect_ratio));
   Magick::ColorRGB yellow(1, 1, 0);
 
-  // THE image Image needs to be created in the for-loop below because we are creating five unique images
+  // THE image Image needs to be created in the for-loop below because we are
+  // creating five unique images
   // Magick::Image image(Magick::Geometry(image_width, image_height), yellow);
 
   // Print out some information about the image to help us debug what's
@@ -68,9 +72,8 @@ int main(int argc, char const* argv[]) {
   //           << " columns (x direction) and " << image.rows()
   //           << " rows (y direction).\n";
 
-  std::cout << "Your image has " << image_width
-            << " columns (x direction) and " << image_height
-            << " rows (y direction).\n";
+  std::cout << "Your image has " << image_width << " columns (x direction) and "
+            << image_height << " rows (y direction).\n";
 
   const int number_of_images = 5;
   std::vector<Magick::Image> images;
@@ -82,39 +85,45 @@ int main(int argc, char const* argv[]) {
     // For example:
     // for (int row = 0; row < image.rows(); row++) {
     //   for (int column = 0; column < image.columns(); column++) {
-      for (int row = 0; row < image.rows(); row++) {
-        for (int column = 0; column < image.columns(); column++){
-          // it RandomDouble01()
-          double random_color_intensity = RandomDouble01();
-          double red = 0.0;
-          double green = 0.0;
-          double blue = 0.0;
-          if (CoinFlip() == true) {
-            red = random_color_intensity;
-          }
-          if (CoinFlip() == true) {
-            green = random_color_intensity;
-          }
-          if (CoinFlip() == true) {
-            blue = random_color_intensity;
-          }
-          // it with the values from the red, green, blue variables.
-          Magick::ColorRGB color(red, green, blue);
-          // For example:
-          // image.pixelColor(row, column, color); INCORRECT WAY
-          // image.pixelColor(column, row, color); CORRECT WAY
-          image.pixelColor(column, row, color);
-          // it with the values from the red, green, blue variables.
-          // TODO: Set the current pixel color in the image to the new color.
-          // For example:
-          // image.pixelColor(column, row, color);
-          //   }
-          // }
+    for (int row = 0; row < image.rows(); row++) {
+      for (int column = 0; column < image.columns(); column++) {
+        // it RandomDouble01()
+        double random_color_intensity = RandomDouble01();
+        double red = 0.0;
+        double green = 0.0;
+        double blue = 0.0;
+        // each coin flip has to be in a different if statement because
+        // function 'CoinFlip()' generates a new number when its called right???
+        // NOTE: Don't need to 'CoinFlip() == true' because function
+        // 'CoinFlip()' is a type boolean
+        // When we say 'if (CoinFlip()) {', we are basically saying,
+        // 'if function 'CoinFlip()' runs as we want it to, then run proceeding
+        // code'
+        if (CoinFlip()) {
+          red = random_color_intensity;
         }
+        if (CoinFlip()) {
+          green = random_color_intensity;
+        }
+        if (CoinFlip()) {
+          blue = random_color_intensity;
+        }
+        // it with the values from the red, green, blue variables.
+        Magick::ColorRGB color(red, green, blue);
+        // For example:
+        // image.pixelColor(row, column, color); INCORRECT WAY
+        // image.pixelColor(column, row, color); CORRECT WAY
+        image.pixelColor(column, row, color);
+        // it with the values from the red, green, blue variables.
+        // For example:
+        // image.pixelColor(column, row, color);
+        //   }
+        // }
       }
-      // uncomment the lines below to add your message to the center of the
-      // image.
-      // image.font("Helvetica");
+    }
+    // uncomment the lines below to add your message to the center of the
+    // image.
+    // image.font("Helvetica");
     // image.fontPointsize(image.rows() / 3.0);
     // image.fillColor(Magick::Color("yellow"));
     // image.annotate(message, Magick::CenterGravity);
