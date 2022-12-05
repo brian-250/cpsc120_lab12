@@ -93,10 +93,10 @@ int main(int argc, char const* argv[]) {
             red = random_color_intensity;
           }
           if (CoinFlip() == true) {
-            blue = random_color_intensity;
+            green = random_color_intensity;
           }
           if (CoinFlip() == true) {
-            green = random_color_intensity;
+            blue = random_color_intensity;
           }
           // it with the values from the red, green, blue variables.
           Magick::ColorRGB color(red, green, blue);
